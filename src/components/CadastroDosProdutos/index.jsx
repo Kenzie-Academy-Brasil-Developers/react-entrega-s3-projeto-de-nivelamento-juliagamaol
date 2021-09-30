@@ -55,18 +55,22 @@ export default function CadastroDosProdutos() {
         let filtred = products.filter((item)=>item.name === productName)
         setCurrentSale([...currentSale,filtred])
     }
-
+    // const handleRemovedClick = (productCode) =>{
+    //   console.log(currentSale.indexOf(productCode))
+    // }
     const carrinho = currentSale.map(item=>(
         <div>
             <p>{item[0].name}</p>
         </div>
+        
     ))
     const purchase = currentSale.reduce((a,b)=>a+b[0].price,0).toFixed(2)
+    const disc = currentSale.reduce((a,b)=>a+b[0].discount,0).toFixed(2)
     return (
         <div>
             Carrinho: {carrinho}
             <p>Valor da compra: R${purchase}</p>
-            <p>Cliente economizou: </p>
+            <p>Cliente economizou: R${disc}</p>
             <form onSubmit={handleSubmit}>
                <input placeholder="Código do produto"value={code} onChange={(e=>setCode(e.target.value))}/> 
                <input placeholder="Nome do produto"value={name}onChange={(e=>setName(e.target.value))}/> 
@@ -79,7 +83,8 @@ export default function CadastroDosProdutos() {
             {products.map(item=>(
                <ProductList 
                item={item}
-               handleClick={handleClick}/>
+               handleClick={handleClick}
+               />
             ))}
         </div>
     </div>
