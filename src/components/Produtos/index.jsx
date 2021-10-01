@@ -40,8 +40,6 @@ export default function Produtos() {
         let filtred = products.filter((item)=>item.name === productName)
         setCurrentSale([...currentSale,filtred])
     }
-   
-    
 
     return (
         <div>
