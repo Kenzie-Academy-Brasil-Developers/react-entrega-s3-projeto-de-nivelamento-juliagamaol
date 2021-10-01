@@ -1,11 +1,11 @@
 import './App.css';
-import CadastroDosProdutos from './components/CadastroDosProdutos';
+import Produtos from './components/Produtos';
 function App() {
   
   return (
     <div className="App">
       <header className="App-header">
-        <CadastroDosProdutos />
+        <Produtos />
       </header>
     </div>
   );

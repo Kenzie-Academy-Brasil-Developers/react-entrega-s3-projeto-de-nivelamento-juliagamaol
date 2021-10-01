@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function ProductList({item:{name,price},handleClick}) {
+export default function ProductCard({item:{name,price},handleClick}) {
     return (
         <div>
             <h2>{name}</h2>
