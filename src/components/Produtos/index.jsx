@@ -37,7 +37,7 @@ export default function Produtos() {
       setProducts([...products,newProduct])
     }
     const handleClick = (productName) =>{
-        let filtred = products.filter((item)=>item.name === productName)
+        const filtred = products.filter((item)=>item.name === productName)
         setCurrentSale([...currentSale,filtred])
     }
 
