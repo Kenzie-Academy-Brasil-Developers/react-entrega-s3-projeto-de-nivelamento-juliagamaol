@@ -17,11 +17,11 @@ export default function Formulario({novoProduct}) {
         setDiscount('')
         
         const product = {
-            code:code*1,
+            code:code,
             name:name,
             description:description,
-            price:price*1,
-            discount:discount*1
+            price:price,
+            discount:discount
         }
         novoProduct(product)
     }
@@ -29,11 +29,11 @@ export default function Formulario({novoProduct}) {
     return (
         <div>
             <form onSubmit={handleSubmit}>
-               <input placeholder="Código do produto"value={code} onChange={(e=>setCode(e.target.value))}/> 
+               <input type="number" placeholder="Código do produto"value={code} onChange={(e=>setCode(e.target.value))}/> 
                <input placeholder="Nome do produto"value={name}onChange={(e=>setName(e.target.value))}/> 
-               <input placeholder="Preço"value={price}onChange={(e=>setPrice(e.target.value))}/> 
+               <input type="number" placeholder="Preço"value={price}onChange={(e=>setPrice(e.target.value))}/> 
                <input placeholder="Descrição do produto"value={description}onChange={(e=>setDescription(e.target.value))}/> 
-               <input placeholder="Valor de desconto"value={discount} onChange={(e=>setDiscount(e.target.value))}/> 
+               <input type="number" placeholder="Valor de desconto"value={discount} onChange={(e=>setDiscount(e.target.value))}/> 
                <button type="submit">Cadastrar</button>
             </form>
         </div>
